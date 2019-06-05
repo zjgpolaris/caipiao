@@ -1,0 +1,10 @@
+{"_id":{"$oid":"5b7adf7a3baec804db5f99d0"},"parentid":0,"permissionName":"admin","permissionLeve":{"$numberLong":"1"},"permissionDesc":"系统管理","sortNum":"0"}
+{"_id":{"$oid":"5b89625d61810404dafe65a6"},"parentid":{"$oid":"5b7adf7a3baec804db5f99d0"},"permissionName":"RoleManage","permissionLevel":2,"permissionDesc":"角色管理","sortNum":"1"}
+{"_id":{"$oid":"5b89692e61810404dafe65aa"},"parentid":{"$oid":"5b7adf7a3baec804db5f99d0"},"permissionName":"accountManager","permissionLevel":2,"permissionDesc":"用户管理","sortNum":"1"}
+{"_id":{"$oid":"5b89f4ba61810404dafe65ac"},"parentid":{"$oid":"5b7adf7a3baec804db5f99d0"},"permissionName":"PermissionManage","permissionLevel":2,"permissionDesc":"权限管理","sortNum":1}
+{"_id":{"$oid":"5bc75bdd6ba3f3df155178e6"},"permissionName":"LotteryManage","permissionDesc":"彩票管理","sortNum":0,"parentid":0,"__v":0}
+{"_id":{"$oid":"5bc75e4d62decfe003b724a7"},"permissionName":"LotteryList","permissionDesc":"彩票列表","sortNum":0,"parentid":{"$oid":"5bc75bdd6ba3f3df155178e6"},"__v":0}
+{"_id":{"$oid":"5bc880f84c04e70c0fe0e72c"},"permissionName":"newsManage","permissionDesc":"新闻管理","sortNum":0,"parentid":{"$oid":"5bc75bdd6ba3f3df155178e6"},"__v":0}
+{"_id":{"$oid":"5bd509a934fe2b046846e779"},"permissionName":"NewsManage","permissionDesc":"新闻管理","sortNum":0,"parentid":0,"__v":0}
+{"_id":{"$oid":"5bd50a2b34fe2b046846e77a"},"permissionName":"ADSManage","permissionDesc":"广告管理","sortNum":3,"parentid":0,"__v":0}
+{"_id":{"$oid":"5bd53144eec3f303037708b6"},"permissionName":"LotteryNews","permissionDesc":"彩票资讯","sortNum":0,"parentid":{"$oid":"5bd509a934fe2b046846e779"},"__v":0}

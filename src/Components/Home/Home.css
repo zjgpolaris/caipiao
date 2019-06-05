@@ -1,0 +1,34 @@
+.Home{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    overflow: auto
+}
+.HomeContent{
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    bottom: 64px;
+    overflow: auto;
+    display: flex;
+    flex-wrap: wrap;
+}
+.HomeConentItem{
+    width: 50%;
+    height: 90px;
+    border-bottom: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center
+}
+.HomeConentItem div:first-child{
+    width: 56px
+}
+.HomeConentItem div:first-child img{
+    width: 100%
+}
