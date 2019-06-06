@@ -1,0 +1,13 @@
+.Register{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgb(243, 188, 188);
+    z-index: 1;
+}
+.registerIunput{
+    width: 90%;
+    margin: 10px auto
+}

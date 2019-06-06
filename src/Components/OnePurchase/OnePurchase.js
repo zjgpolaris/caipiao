@@ -16,6 +16,16 @@ class OnePurchase extends Component {
                     <span key="1" className="iconfont">&#xe696;</span>
                 ]}
                 >网易一元购</NavBar>
+                <div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                    </div>
+                    <div>
+                        <p></p>
+                        <p></p>
+                    </div>
+                </div>
                 一元购
             </div>
         )

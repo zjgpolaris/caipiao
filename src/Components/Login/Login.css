@@ -1,0 +1,25 @@
+.Login{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F0EFE7;
+    z-index: 1;
+}
+.footerBTN{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 50px
+}
+.btn{
+    width: 50%;
+    height: 100%;
+    line-height: 50px
+}
+.loginInput{
+    width: 90%;
+    margin: 10px auto
+}

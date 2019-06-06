@@ -27,9 +27,9 @@ class Home extends Component {
                     {name:'浙江11选5',imgurl:require('../../img/易乐11选5@2x.png'),subtitle:'机会多'},
                     {name:'山东11选5',imgurl:require('../../img/icon_d11_9c98864.png'),subtitle:'奖池大'},
                 ]},
-
             ]
         }
+        this.handleLogin = this.handleLogin.bind(this)
     }
     render(){
         return (
@@ -38,7 +38,7 @@ class Home extends Component {
                 style={{background:'#D91D37',height:'64px'}}
                 onLeftClick={() => console.log('onLeftClick')}
                 rightContent={[
-                    <span key="1" className="iconfont" style={{color:'yellow'}}>&#xe60e;</span>,
+                    <span key="1" className="iconfont" style={{color:'yellow'}} onClick={this.handleLogin}>&#xe60e;</span>,
                 ]}
                 >网易彩票</NavBar>
                 <div className="HomeContent">
@@ -58,6 +58,9 @@ class Home extends Component {
                 </div>
             </div>
         )
+    }
+    handleLogin(){
+        this.props.history.push('/login')
     }
 }
 

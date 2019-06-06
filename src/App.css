@@ -39,7 +39,6 @@ header span{
 }
 .footer>div{
     flex: 1;
-    line-height: 64px;
     text-align: center
 }
 .footer>div>a{
@@ -47,8 +46,18 @@ header span{
     width: 100%;
     height: 100%;
     color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center
 }
-
+.footer>div>a>span{
+    display: block;
+    font-size: 30px
+}
 .am-navbar span {
     font-size: 24px;
+}
+.selected{
+    color: red
 }
