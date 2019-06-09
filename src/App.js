@@ -12,19 +12,20 @@ class App extends React.Component {
                 <div className="App">
                     <Switch>
                         {
-                            routes.map((item,index)=>{
-                                return (
-                                    <RouteWithSubRoute key={item.name} {...item} />
-                                )
-                            })
-                        }
-                        {
                              LoginRoute.map((item,index)=>{
                                 return (
                                     <RouteWithSubRoute key={item.name} {...item} />
                                 )
                             })
                         }
+                        {
+                            routes.map((item,index)=>{
+                                return (
+                                    <RouteWithSubRoute key={item.name} {...item} />
+                                )
+                            })
+                        }
+                        
                         <Route path='/' render={()=>(<Redirect to="/home"/>)} />
                     </Switch>
                     <div className="footer">

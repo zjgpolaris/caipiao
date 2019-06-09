@@ -1,7 +1,7 @@
 import React,{ Component } from 'react'
 import './Login.css'
 import { NavBar,Icon,Carousel,InputItem,Button  } from 'antd-mobile';
-import axiox from 'axios'
+import axios from 'axios'
 import apis from '../../apis/apis'
 
 class Login extends Component {
@@ -24,6 +24,9 @@ class Login extends Component {
         this.goToRegister = this.goToRegister.bind(this)
     }
     render () {
+        axios.get('http://localhost:80/gameManage/games/findByGameName',{gameName:'ssq'}).then((resp)=>{
+            console.log(resp)
+        })
         return (
             <div className="Login">
                 <NavBar
@@ -42,7 +45,7 @@ class Login extends Component {
                 >
                     {
                         this.state.imglist.map((item,index)=>{
-                            return <img key={index} src={item}/>
+                            return <img key={index} src={item} alt=""/>
                         })
                     }
                 </Carousel>
@@ -67,27 +70,38 @@ class Login extends Component {
         )
     }
     goBack(){
-        console.log(this.props)
         this.props.history.go(-1)
     }
     loginin(){
-        console.log(this.state)
-        axiox.post(apis.login,{
-            username:'zjg',
-            password :'zjg123',
-        }).then((resp)=>{
-            console.log(resp.data.success)
+        const loginValue = this.state.username
+        var reg = new RegExp("^[a-z0-9]+([._\\-]*[a-z0-9])*@([a-z0-9]+[-a-z0-9]*[a-z0-9]+.){1,63}[a-z0-9]+$");
+        let loginType = ''
+        if(Number(loginValue)){
+            loginType = 'phone' 
+        }else if(reg.test(loginValue)){
+            loginType = 'email' 
+        }else{
+            loginType = 'username' 
+        }
+        const password = this.state.password
+        const userinfo = {
+            loginType,
+            loginValue,
+            password
+        }
+        axios.post(apis.login,userinfo).then((resp)=>{
+            console.log(resp)
+            if(resp.data.success){
+               this.props.history.push('/home')
+            }
         })
     }
     changeUsername(ev){
-        console.log(ev)
         this.setState({
             username:ev
         })
-        console.log(this.inputusername)
     }
     changePassword(ev){
-        console.log(ev)
         this.setState({
             password:ev
         })

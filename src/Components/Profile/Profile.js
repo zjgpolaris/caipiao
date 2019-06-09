@@ -1,8 +1,12 @@
 import React,{Component} from 'react'
 import './Profile.css'
-import { NavBar } from 'antd-mobile';
+import { NavBar,Button } from 'antd-mobile';
 
 class Profile extends Component {
+    constructor(props){
+        super(props)
+        this.handleLogin = this.handleLogin.bind(this)
+    }
     render(){
         return (
             <div className="Profile">
@@ -17,9 +21,12 @@ class Profile extends Component {
                     <span key="1" className="iconfont">&#xe620;</span>
                 ]}
                 ></NavBar>
-                我的
+                <Button type="warning" style={{marginTop:'10px'}} onClick={this.handleLogin}>登录</Button>
             </div>
         )
+    }
+    handleLogin(){
+        this.props.history.push('/login')
     }
 }
 

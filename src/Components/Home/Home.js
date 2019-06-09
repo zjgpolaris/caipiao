@@ -7,10 +7,10 @@ class Home extends Component {
         super(props)
         this.state = {
             lotterys : [
-                {name:'双色球',imgurl:require('../../img/ssq@2x.png'),subtitle:'2元中1000万'},
-                {name:'大乐透',imgurl:require('../../img/dlt@2x.png'),subtitle:'奖池超72亿'},
+                {name:'双色球',en:'ssq',imgurl:require('../../img/ssq@2x.png'),subtitle:'2元中1000万'},
+                {name:'大乐透',en:'dlt',imgurl:require('../../img/dlt@2x.png'),subtitle:'奖池超72亿'},
                 {name:'快3系类',imgurl:require('../../img/kuai3@2x.png'),subtitle:'查历史开奖'},
-                {name:'3D',imgurl:require('../../img/3d@2x.jpeg'),subtitle:'暂停销售'},
+                {name:'3D',en:'3d',imgurl:require('../../img/3d@2x.jpeg'),subtitle:'暂停销售'},
                 {name:'返奖大转盘',imgurl:require('../../img/5a7ad616c94aea37.png'),subtitle:'百分百中大奖'},
                 {name:'走势图',imgurl:require('../../img/9cee1329f19f731b.png'),subtitle:'中奖走势研究'},
                 {name:'冬日福利',imgurl:require('../../img/2017011115TT63252724.png'),subtitle:'试试手气'},
@@ -45,7 +45,7 @@ class Home extends Component {
                     {
                         this.state.lotterys.map((item,index)=>{
                             return(
-                                <div className="HomeConentItem" key={index+item.name}> 
+                                <div className="HomeConentItem" key={index+item.name} onClick={this.goToGame.bind(this,{en:item.en,name:item.name})}> 
                                     <div><img src={item.imgurl} alt={item.name}/></div>
                                     <div>
                                         <h3>{item.name}</h3>
@@ -61,6 +61,11 @@ class Home extends Component {
     }
     handleLogin(){
         this.props.history.push('/login')
+    }
+    goToGame(item){
+        if(item.en){
+            this.props.history.push('/home/'+item.en,item)
+        }
     }
 }
 

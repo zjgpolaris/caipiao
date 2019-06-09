@@ -36,9 +36,9 @@ class Register extends Component {
                 </NavBar>
                 <div className="registerIunput">
                     <InputItem onChange={this.changeUsername} value={this.state.username}>用户名</InputItem>
-                    <InputItem onChange={this.changePassword} value={this.state.password}>密码</InputItem>
+                    <InputItem type="password" onChange={this.changePassword} value={this.state.password}>密码</InputItem>
                     <InputItem onChange={this.changeEmail} value={this.state.email}>邮箱</InputItem>
-                    <InputItem onChange={this.changePhone} value={this.state.phone}>电话</InputItem>
+                    <InputItem type="phone" onChange={this.changePhone} value={this.state.phone}>电话</InputItem>
                     <Button type="warning" style={{marginTop:'10px'}} onClick={this.handleRegister}>注册</Button>
                 </div>
             </div>

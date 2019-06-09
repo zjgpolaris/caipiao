@@ -27,6 +27,7 @@ export const routes = [
 export const LoginRoute = [
     {path:'/login',component:Login,name:'登录'},
     {path:'/register',component:loadable(() => import('../Components/Register/Register')),name:'注册'},
+    {path:'/home/:id',component:loadable(() => import('../Components/Home/Lotterys/game')),name:'玩法'},
 ]
 
 export const RouteWithSubRoute = (route) => {
