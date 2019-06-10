@@ -20,11 +20,9 @@ class Game extends Component {
     }
     componentDidMount(){
         console.log(apis.findByGameName,this.props.match.params.id)
-        // axios.get(apis.findByGameName,{gameName:this.props.match.params.id,pageSize:20,pageNo:1}).then((resp)=>{
-        //     console.log(resp)
-        // })
-        console.log(window.DeviceMotionEvent)
-        console.log(this.state.arr)
+        axios.get(apis.findByGameName,{gameName:this.props.match.params.id,pageSize:20,pageNo:1}).then((resp)=>{
+            console.log(resp)
+        })
         if(window.DeviceMotionEvent){
             var _this = this
             var speed = 25;
@@ -164,9 +162,11 @@ class Game extends Component {
         }
         let redArr = []
         let blueArr = []
+        let red = this.state.arr.red
+        let blue = this.state.arr.blue
         for(var a=0;a<length1;a++){
             let func = function(){
-                var redball = Math.ceil(Math.random()*33)
+                var redball = Math.ceil(Math.random()*red)
                 if(redArr.indexOf(redball)===-1){
                     redArr.push(redball)
                 }else{
@@ -177,7 +177,7 @@ class Game extends Component {
         }
         for(var b=0;b<length2;b++){
             let func = function(){
-                var blueball = Math.ceil(Math.random()*16)
+                var blueball = Math.ceil(Math.random()*blue)
                 if(blueArr.indexOf(blueball)===-1){
                     blueArr.push(blueball)
                 }else{
